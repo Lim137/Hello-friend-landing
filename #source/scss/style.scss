@@ -19,6 +19,7 @@ background-color: #282828;
 	display: flex;
 	background-color: $color4;
 	justify-content: space-between;
+	flex-wrap: wrap;
 
 
 	&__textbox {
@@ -60,10 +61,11 @@ background-color: #282828;
 	background-color: $color2;
 	display: flex;
 	padding: 48px 50px 42px 50px;
-
+	
 	&__image {
 		margin-right: 39px;
 		height: 186px;
+		width: 430px;
 	}
 
 	&__title {
@@ -86,9 +88,19 @@ background-color: #282828;
 	}
 }
 
+@media (max-width: 1060px){
+	.header{
+		flex-direction: column;
+
+	}
+	.about{
+		flex-direction: column-reverse;
+	}
+}
 .column-block {
 	background-color: $color3;
 	padding: 45px 50px 48px 50px;
+	
 
 	&__title {
 		color: $color4;
@@ -101,20 +113,23 @@ background-color: #282828;
 .container {
 
 	display: flex;
+	
 }
+
 
 .column {
 	display: flex;
 	flex-direction: column;
 	width: 50%;
 	padding-right: 15px;
+	flex-wrap: wrap;
 
 	&__item {
 		display: flex;
 		margin-bottom: 28px;
 	}
 
-	.column__item:last-child {
+	&__item:last-child {
 		margin-bottom: 0;
 	}
 
@@ -139,6 +154,24 @@ background-color: #282828;
 		color: #333333;
 		font-size: 16px;
 		line-height: 24px;
+	}
+}
+@media (max-width: 1181px){
+
+	.container{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.column {
+		width: 90%;
+		margin-bottom: 28px;
+		&__image{
+			max-width: 100%;
+		}
+	}
+	.column:last-child{
+		margin-bottom: 0;
 	}
 }
 .vertical-block {
@@ -212,7 +245,24 @@ padding-bottom: 49px;
 		color: $color4;
 	}
 }
+@media (max-width: 1150px){
 
+	.message-board{
+		flex-direction: column;
+		
+		align-items: center;
+	}
+	.board{
+		max-width: 50%;
+	margin-right: 0;
+	margin-bottom: 28px;
+	}
+	.vertical-block {
+		padding: 46px 0 0 0;
+		
+	}
+
+}
 
 
 
@@ -224,5 +274,39 @@ padding-bottom: 49px;
 		text-align: center;
 		padding: 30px 0 23px 0;
 	font-size: 12px;
+	}
+}
+@media (max-width: 524px){
+
+	.header__img {
+		max-width: 100%;
+		margin-top: 20px;
+	}
+
+	.about__image{
+		max-width: 100%;
+	}
+
+	.column{
+		&__item{
+			flex-direction: column;
+		}
+		&__image{
+			margin-bottom: 20px;
+		}
+	}
+	.vertical-block {
+		padding: 46px 0 0 0;
+		
+	}
+	.board{
+		max-width: 70%;
+	
+		&__text1{
+font-size: 20px;
+		}
+		&__text2{
+font-size: 30px;
+		}
 	}
 }
